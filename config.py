@@ -6,6 +6,7 @@ from sqlalchemy import URL
 
 load_dotenv()
 
+# IBGE
 url_ibge = (
     "https://apisidra.ibge.gov.br/"
     "values/t/4709/n6/2611606/p/2022/v/93"
@@ -13,10 +14,13 @@ url_ibge = (
 
 nome_arquivo = "ibge_populacao"
 
+# MONGO
+MONGO_URL = os.getenv("MONGO_URL")
 
-# ---------------------------------------------------------
+
+
 # PostgreSQL
-# ---------------------------------------------------------
+
 
 POSTGRES_USER = os.getenv("POSTGRES_USER")
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
