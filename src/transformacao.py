@@ -12,7 +12,7 @@ def transform(dados):
     
     logger.info("Iniciando a transformação dos dados.")
     
-    df = pd.Dataframe(dados)
+    df = pd.DataFrame(dados)
     
     logger.info(
         "Dataframe criado em %s linhas e %s colunas",
@@ -45,3 +45,16 @@ def transform(dados):
         "Transformação concluída com sucesso"
     )
     return df
+
+if __name__ == "__main__":
+    from src.extracao import extract
+    
+    dados = extract
+    
+    df = transform(dados)
+    
+    print("\n Dataframe transformado")
+    print(df)
+    
+    print("\n tipos de colunas: ")
+    print(df.dtypes)
