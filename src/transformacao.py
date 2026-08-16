@@ -19,6 +19,9 @@ def transform(dados):
         df.shape[0],
         df.shape[1]
     )
+    df = df.iloc[1:].reset_index(drop=True)
+    logger.info("linha do vabeçalho SIDRA removida.")
+    
     df = df.rename(
          columns={
              "D1N": "localidade",
@@ -44,6 +47,16 @@ def transform(dados):
     logger.info(
         "Transformação concluída com sucesso"
     )
+    logger.info(
+    "Transformação concluída com sucesso"
+)
+
+    print("\nDataFrame completo:")
+    print(df.to_string())
+
+    print("\nValores nulos:")
+    print(df[df["valor"].isnull()].to_string())
+
     return df
 
 if __name__ == "__main__":
